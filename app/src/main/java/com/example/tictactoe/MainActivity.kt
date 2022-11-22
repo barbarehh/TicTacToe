@@ -90,33 +90,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if (ButtonNum != 0) {
                 playgame(clickedView, ButtonNum)
             }
-            if (ButtonNum == 1) {
-                button1.isEnabled = false
-            }
-            if (ButtonNum == 2) {
-                button2.isEnabled = false
-            }
-            if (ButtonNum == 3) {
-                button3.isEnabled = false
-            }
-            if (ButtonNum == 4) {
-                button4.isEnabled = false
-            }
-            if (ButtonNum == 5) {
-                button5.isEnabled = false
-            }
-            if (ButtonNum == 6) {
-                button6.isEnabled = false
-            }
-            if (ButtonNum == 7) {
-                button7.isEnabled = false
-            }
-            if (ButtonNum == 8) {
-                button8.isEnabled = false
-            }
-            if (ButtonNum == 9) {
-                button9.isEnabled = false
-            }
+
 
 
         }
@@ -134,6 +108,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             activeplayer = 1
             secondplayer.add(ButtonNum)
         }
+        clickedView.isEnabled=false
         reset()
         nextround()
         check()
@@ -189,14 +164,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             winner = 2
         }
         if (firstPlayer.size + secondplayer.size == 9 && winner == 0) {
+            winner=3
             Toast.makeText(this, "megobrobam gaimarjva,Frea <3 ", Toast.LENGTH_SHORT).show()
         }
         if (winner == 1) {
-            Toast.makeText(
-                this,
-                "Msxlis limonati fershi midis gvino,mogebulia X  ",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this, "Msxlis limonati fershi midis gvino,mogebulia X  ", Toast.LENGTH_SHORT).show()
             score1 += 1
 
         }
@@ -253,7 +225,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun nextround() {
         nextround.setOnClickListener {
-            button1.text = ""
+           if(winner==1||winner==2||winner==3){ button1.text = ""
             button2.text = ""
             button3.text = ""
             button4.text = ""
@@ -274,12 +246,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             activeplayer=1
             winner=0
             firstPlayer = ArrayList<Int>()
-            secondplayer = ArrayList<Int>()
+            secondplayer = ArrayList<Int>()}
         }
-
-
     }
-
-
     }
 
