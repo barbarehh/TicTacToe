@@ -21,7 +21,7 @@ class EnterYourName : AppCompatActivity() {
         enter.setOnClickListener {
             val name1=saxeli1.text.toString()
             val name2=saxeli2.text.toString()
-            if (saxeli1.text.toString()=="" || saxeli1.text.toString().length>10|| saxeli2.text.toString()== ""){
+            if (saxeli1.text.toString()=="" || saxeli2.text.toString()== ""){
                 Toast.makeText(this, "Please enter player names", Toast.LENGTH_SHORT).show()
             } else{
                 val i= Intent(this,MainActivity::class.java)
